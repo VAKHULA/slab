@@ -45,8 +45,6 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -76,11 +74,14 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --background2: rrgb(212, 201, 190);
+  --accent: rgb(18, 52, 88);
+  --background: rgb(241, 239, 236);
+  --foreground: rgb(3, 3, 3);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -110,6 +111,11 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  --background2: rgb(57, 62, 70);
+  --accent: rgb(255, 211, 105);
+  --background: rgb(34, 40, 49);
+  --foreground: rgb(238, 238, 238);
 }
 
 @layer base {
@@ -121,9 +127,66 @@
   }
 }
 
+html,
 body {
-  background-image: url('/patterns/p6.jpg');
-  background-size: 3rem;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.iv {
+  width: 100%;
+  height: 100%;
+}
+
+.containerx {
+  position: relative;
+  border: 1px solid var(--accent);
+  color: var(--foreground);
+  margin-bottom: 16px;
+  height: 100%;
+}
+
+.viewport {
+  position: absolute;
+}
+
+.viewport::after {
+  content: " ";
+  background-image: radial-gradient(var(--background2) 1px, transparent 0px);
+  background-repeat: repeat; /* or omit this declaration */
+  background-size: 30px 30px;
+  background-position: center;
+  width: 1000000%;
+  height: 1000000%;
+  display: block;
+  position: absolute;
+  top: -500000%;
+  left: -500000%;
+  z-index: -1;
+}
+
+.ruler {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ruler.horizontal {
+  left: 0px;
+  width: 100%;
+  height: 30px;
+}
+
+.ruler.vertical {
+  top: 0px;
+  width: 30px;
+  height: 100%;
 }
 
 .main-input {

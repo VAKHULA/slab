@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${baseFont.className} antialiased dark`}
+        className={`${baseFont.className} app antialiased dark`}
       >
         {children}
       </body>
