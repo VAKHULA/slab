@@ -120,3 +120,28 @@
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  background-image: url('/patterns/p6.jpg');
+  background-size: 3rem;
+}
+
+.main-input {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+}
+
+.main-input > div {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+/* .main-input textarea {
+  border-radius: 1.5rem;
+} */
+
+.main-input [data-slot="card-footer"] {
+  justify-content: flex-end;
+}
