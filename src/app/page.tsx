@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import Page from '@/components/page';
-
+import { Shadertoy } from '@/components/shadertoy';
 const Viewer = dynamic(() => import('@/components/viewer'), { ssr: false });
 
 // import useGemma from "@/hooks/useGemma";
@@ -42,7 +42,6 @@ export default function Home() {
         <Page header="" footer="">
           <div className="w-full">
             <PlateEditor />
-
             <Toaster />
           </div>
         </Page>
@@ -78,6 +77,7 @@ export default function Home() {
           </CardContent>
         </Card>
       </div>
+      <Shadertoy />
     </>
   );
 }
