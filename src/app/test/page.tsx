@@ -206,8 +206,10 @@ export default function TestPage() {
               try {
                 setIsLoading(true);
                 setOutput('');
+
                 const response = await fetch(url, {
                   method: 'POST',
+                  mode: 'no-cors',
                   body: JSON.stringify({
                     model: model,
                     format: 'json',
