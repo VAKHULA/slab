@@ -67,7 +67,7 @@ export default function RootLayout({
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={`${baseFont.className} app antialiased dark`}>{children}</body>
+      <body className={`${'baseFont.className'} app antialiased dark`}>{children}</body>
     </html>
   );
 }

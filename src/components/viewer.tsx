@@ -4,11 +4,13 @@ import InfiniteViewer from 'react-infinite-viewer';
 
 export default function Viewer({ children }: { children: React.ReactNode }) {
   const viewerRef = useRef<InfiniteViewer>(null);
-
   useEffect(() => {
     // eslint-disable-next-line
     // @ts-ignore
-    viewerRef.current?.infiniteViewer?.setZoom(0.8);
+    viewerRef.current?.infiniteViewer?.setZoom(0.3, {
+      zoomOffsetX: 300,
+      zoomOffsetY: 300,
+    });
   }, []);
 
   return (

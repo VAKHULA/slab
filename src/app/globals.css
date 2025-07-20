@@ -166,21 +166,21 @@ body {
   position: absolute;
 }
 
-.viewport::after {
+/* .viewport::after {
   content: ' ';
-  /* background-image: radial-gradient(var(--background2) 1px, transparent 0px); */
+  background-image: radial-gradient(var(--background2) 1px, transparent 0px);
   background-image: url(../../public/patterns/p6.jpg);
-  background-repeat: repeat; /* or omit this declaration */
+  background-repeat: repeat;
   background-size: 30px 30px;
   background-position: center;
-  width: 1000000%;
-  height: 1000000%;
+  width: 10000%;
+  height: 10000%;
   display: block;
   position: absolute;
-  top: -500000%;
-  left: -500000%;
+  top: -5000%;
+  left: -5000%;
   z-index: -1;
-}
+} */
 
 .ruler {
   position: absolute;
@@ -226,4 +226,9 @@ body {
   background-color: var(--background2);
   position: relative;
   border-radius: 1rem;
+}
+
+.group.absolute.right-4.bottom-4 {
+  bottom: -4rem;
+  opacity: 0;
 }
