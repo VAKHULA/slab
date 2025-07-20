@@ -1,15 +1,15 @@
-'use client'
-import React, { useRef, useEffect } from "react";
-import InfiniteViewer from "react-infinite-viewer";
+'use client';
+import React, { useRef, useEffect } from 'react';
+import InfiniteViewer from 'react-infinite-viewer';
 
-export default function Viewer ({ children }: { children: React.ReactNode }) {
-  const viewerRef = useRef<InfiniteViewer>(null)
+export default function Viewer({ children }: { children: React.ReactNode }) {
+  const viewerRef = useRef<InfiniteViewer>(null);
 
   useEffect(() => {
     // eslint-disable-next-line
     // @ts-ignore
-    viewerRef.current?.infiniteViewer?.setZoom(0.8)
-  }, [])
+    viewerRef.current?.infiniteViewer?.setZoom(0.8);
+  }, []);
 
   return (
     <div className="containerx">
@@ -21,13 +21,11 @@ export default function Viewer ({ children }: { children: React.ReactNode }) {
           // @ts-ignore
           viewerRef.current?.infiniteViewer?.setZoom(e.zoom, {
             zoomOffsetX: e.clientX,
-            zoomOffsetY: e.clientY
-          })
+            zoomOffsetY: e.clientY,
+          });
         }}
       >
-        <div className="viewport">
-          {children}
-        </div>
+        <div className="viewport">{children}</div>
       </InfiniteViewer>
     </div>
   );

@@ -1,5 +1,7 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+
+@plugin "tailwind-scrollbar-hide";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -41,6 +43,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-highlight: var(--highlight);
+  --color-brand: var(--brand);
 }
 
 :root {
@@ -75,10 +79,12 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  --background2: rrgb(212, 201, 190);
+  --background2: rgb(212, 201, 190);
   --accent: rgb(18, 52, 88);
   --background: rgb(241, 239, 236);
   --foreground: rgb(3, 3, 3);
+  --brand: oklch(0.623 0.214 259.815);
+  --highlight: oklch(0.852 0.199 91.936);
 }
 
 .dark {
@@ -116,6 +122,10 @@
   --accent: rgb(255, 211, 105);
   --background: rgb(34, 40, 49);
   --foreground: rgb(238, 238, 238);
+  --brand: oklch(0.707 0.165 254.624);
+  --highlight: oklch(0.852 0.199 91.936);
+
+  --popover: var(--background2);
 }
 
 @layer base {
@@ -157,8 +167,9 @@ body {
 }
 
 .viewport::after {
-  content: " ";
-  background-image: radial-gradient(var(--background2) 1px, transparent 0px);
+  content: ' ';
+  /* background-image: radial-gradient(var(--background2) 1px, transparent 0px); */
+  background-image: url(../../public/patterns/p6.jpg);
   background-repeat: repeat; /* or omit this declaration */
   background-size: 30px 30px;
   background-position: center;
@@ -205,6 +216,14 @@ body {
   border-radius: 1.5rem;
 } */
 
-.main-input [data-slot="card-footer"] {
+.main-input [data-slot='card-footer'] {
   justify-content: flex-end;
+}
+
+.page {
+  width: 1240px;
+  min-height: 1748px;
+  background-color: var(--background2);
+  position: relative;
+  border-radius: 1rem;
 }
